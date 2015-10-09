@@ -16,7 +16,7 @@ namespace SOLID.Tests.DIP
 
 	    [SetUp]
 	    public void SetUp() {
-		    service = new UserService();
+		    service = new UserService(new EmailService(), new Database());
 		    Database.UserIsSaved(false);
 		    SmtpClient.MailIsSent(false);
 	    }

@@ -9,15 +9,22 @@ namespace SOLID.DIP
 {
     public class UserService
     {
-        private Database database;
-        private EmailService emailService;
+        private IDatabase database;
+        private IEmailService emailService;
+
+        public UserService() : this(new EmailService(), new Database())
+        { }
+
+        public UserService(IEmailService emailService, IDatabase database)
+        {
+            this.emailService = emailService;
+            this.database = database;
+        }
 
         public void Register(string email, string password)
         {
-            emailService = new EmailService();
             emailService.ValidateEmail(email);
 
-            database = new Database();
             var user = new User(email, password);
             database.Save(user);
 

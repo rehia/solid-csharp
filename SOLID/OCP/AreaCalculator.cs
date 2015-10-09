@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,13 @@ namespace SOLID.OCP
 {
     public class AreaCalculator
     {
-        public double Area(IList<Rectangle> rectangles)
+        public double Area(IList<Shape> shapes)
         {
             double area = 0;
 
-            foreach (var rectangle in rectangles)
+            foreach (var shape in shapes)
             {
-                area += rectangle.GetHeight() * rectangle.GetWidth();
+                area += shape.Area();
             }
 
             return area;

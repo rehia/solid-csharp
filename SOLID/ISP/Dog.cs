@@ -2,13 +2,8 @@
 
 namespace SOLID.ISP
 {
-    class Dog : Animal
+    class Dog : Runnable, Barkable
     {
-        public void Fly()
-        {
-            throw new InvalidOperationException("dogs can't fly !");
-        }
-
         public void Run()
         {
         }

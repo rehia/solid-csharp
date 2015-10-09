@@ -5,13 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using SOLID.Common;
 
-namespace SOLID.DIP
+namespace SOLID.SRP
 {
-    public class EmailService : IEmailService
+    public class EmailService
     {
-        private SmtpClient smtpClient;
-
-        public void ValidateEmail(string email)
+        public void ValidateEmailFormat(string email)
         {
             if (!email.Contains("@"))
             {
@@ -19,9 +17,9 @@ namespace SOLID.DIP
             }
         }
 
-        public void SendEmail(string email, string message)
+        public void SendMessage(string email, string message)
         {
-            smtpClient = new SmtpClient();
+            var smtpClient = new SmtpClient();
             smtpClient.Send(new MailMessage("mysite@nowhere.com", email, message));
         }
     }

@@ -40,13 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Database.cs" />
+    <Compile Include="Common\IDatabase.cs" />
     <Compile Include="Common\MailMessage.cs" />
     <Compile Include="Common\SmtpClient.cs" />
     <Compile Include="Common\ValidationException.cs" />
     <Compile Include="Common\User.cs" />
     <Compile Include="DIP\EmailService.cs" />
+    <Compile Include="DIP\IEmailService.cs" />
     <Compile Include="DIP\UserService.cs" />
-    <Compile Include="ISP\Animal.cs" />
+    <Compile Include="ISP\Flyable.cs" />
     <Compile Include="ISP\Bird.cs" />
     <Compile Include="ISP\Cat.cs" />
     <Compile Include="ISP\Dog.cs" />
@@ -54,9 +56,13 @@
     <Compile Include="LSP\Colvert.cs" />
     <Compile Include="LSP\Duck.cs" />
     <Compile Include="LSP\ElectricDuck.cs" />
+    <Compile Include="LSP\ElectricDuckImplementation.cs" />
     <Compile Include="OCP\AreaCalculator.cs" />
+    <Compile Include="OCP\Circle.cs" />
     <Compile Include="OCP\Rectangle.cs" />
+    <Compile Include="OCP\Shape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SRP\EmailService.cs" />
     <Compile Include="SRP\UserService.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.Common
 {
-    public class Database
+    public class Database : IDatabase
     {
         private static bool userIsSaved;
 

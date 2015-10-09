@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.OCP
 {
-    public class Rectangle
+    public class Rectangle : Shape
     {
         private float height;
         private float width;
@@ -25,6 +25,11 @@ namespace SOLID.OCP
         public float GetWidth()
         {
             return width;
+        }
+
+        public double Area()
+        {
+            return GetHeight() * GetWidth();
         }
     }
 }

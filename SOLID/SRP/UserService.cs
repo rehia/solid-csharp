@@ -10,21 +10,28 @@ namespace SOLID.SRP
     public class UserService
     {
         private Database database;
-        private SmtpClient smtpClient;
+        private EmailService emailService;
 
         public void Register(string email, string password)
         {
-            if (!email.Contains("@"))
-            {
-                throw new ValidationException("Email is not a valid email");
-            }
+            emailService = new EmailService();
+            emailService.ValidateEmailFormat(email);
 
+            SaveUserToDatabase(email, password);
+
+            SendWelcomeMessage(email);
+        }
+
+        private void SendWelcomeMessage(string email)
+        {
+            emailService.SendMessage(email, "Hello fool !");
+        }
+
+        private void SaveUserToDatabase(string email, string password)
+        {
             database = new Database();
             var user = new User(email, password);
             database.Save(user);
-
-            smtpClient = new SmtpClient();
-            smtpClient.Send(new MailMessage("mysite@nowhere.com", email, "Hello fool !"));
         }
     }
 }

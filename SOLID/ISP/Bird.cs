@@ -2,7 +2,7 @@
 
 namespace SOLID.ISP
 {
-    class Bird : Animal
+    class Bird : Flyable, Runnable
     {
         public void Fly()
         {
@@ -10,11 +10,6 @@ namespace SOLID.ISP
 
         public void Run()
         {
-        }
-
-        public void Bark()
-        {
-            throw new InvalidOperationException("birds can't bark !");
         }
     }
 }

@@ -5,10 +5,18 @@ using System.Threading.Tasks;
 
 namespace SOLID.ISP
 {
-    interface Animal
+    interface Flyable
     {
         void Fly();
+    }
+
+    interface Runnable
+    {
         void Run();
+    }
+
+    interface Barkable
+    {
         void Bark();
     }
 }

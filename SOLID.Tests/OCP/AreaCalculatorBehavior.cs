@@ -16,7 +16,7 @@ namespace SOLID.Tests.OCP
         [Test]
         public void ShouldCalculateARectangleArea()
         {
-            var rectangles = new List<Rectangle> {new Rectangle(10, 3)};
+            var rectangles = new List<Shape> {new Rectangle(10, 3)};
 
             var area = calculator.Area(rectangles);
 
@@ -26,21 +26,22 @@ namespace SOLID.Tests.OCP
         [Test]
         public void ShouldCalculateTotalAreaForTwoRectangles()
         {
-            var rectangles = new List<Rectangle> {new Rectangle(10, 3), new Rectangle(4, 5)};
+            var rectangles = new List<Shape> {new Rectangle(10, 3), new Rectangle(4, 5)};
 
             var area = calculator.Area(rectangles);
 
             Assert.AreEqual(50.0, area, 0.01);
         }
 
-        //[Test]
-        //public void ShouldCalculateACircleArea()
-        //{
-        //    var circles = new List<Circle> { new Circle(5) };
 
-        //    var area = calculator.Area(circles);
+        [Test]
+        public void ShouldCalculateACircleArea()
+        {
+            var circles = new List<Shape> { new Circle(5) };
 
-        //    Assert.AreEqual(78.5, area, 0.1);
-        //}
+            var area = calculator.Area(circles);
+
+            Assert.AreEqual(78.5, area, 0.1);
+        }
     }
 }
