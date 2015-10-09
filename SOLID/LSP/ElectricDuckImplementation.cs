@@ -1,13 +1,14 @@
 ﻿namespace SOLID.LSP
 {
-    public class ElectricDuckImplementation : ElectricDuck
+    public class ElectricDuckImplementation : ElectricDuck, Duck
     {
         private bool hasMoved;
         private bool isTurnedOn;
 
-        public void TurnOn()
+        public Duck TurnOn()
         {
             this.isTurnedOn = true;
+            return this;
         }
 
         public bool HasMoved()

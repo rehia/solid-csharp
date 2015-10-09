@@ -1,7 +1,7 @@
 ﻿namespace SOLID.LSP
 {
-    public interface ElectricDuck : Duck
+    public interface ElectricDuck
     {
-        void TurnOn();
+        Duck TurnOn();
     }
 }

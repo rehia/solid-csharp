@@ -24,13 +24,13 @@ namespace SOLID.Tests.LSP
         [Test]
         public void ElectricDuckShouldSwim()
         {
-            ElectricDuck duck = new ElectricDuckImplementation();
+            ElectricDuck electricDuck = new ElectricDuckImplementation();
 
             // pour faire fonctionner un canard électrique
-            duck.TurnOn();
-            duck.Swim();
+            electricDuck.TurnOn();
+            electricDuck.Swim();
 
-            Assert.That(duck.HasMoved());
+            Assert.That(electricDuck.HasMoved());
         }
     }
 }
